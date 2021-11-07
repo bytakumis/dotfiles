@@ -18,3 +18,5 @@
     (https://gyazo.com/download?lang=ja)
   - Biscuit
     (https://eatbiscuit.com/ja)
+  - karabiner
+    (https://karabiner-elements.pqrs.org/)
