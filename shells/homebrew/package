@@ -1,0 +1,12 @@
+wget
+git
+neovim
+tmux
+rg
+fish
+starship
+jq
+peco
+exa
+bat
+neofetch
