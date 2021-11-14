@@ -22,6 +22,7 @@ function cd_by_peco_on_current_dir
   set selected_dir (fd . -t d -H | peco)
   if [ $selected_dir ]
     cd $selected_dir
+    echo cd $selected_dir
     commandline -f repaint
   end
 end
@@ -33,6 +34,7 @@ function cd_by_peco_on_root_dir
   set selected_dir (fd . '/' -t d -H | peco)
   if [ $selected_dir ]
     cd $selected_dir
+    echo cd $selected_dir
     commandline -f repaint
   end
 end
@@ -44,6 +46,7 @@ function vim_by_peco_on_current_dir
   set selected_dir (fd . -t f -H | peco)
   if [ $selected_dir ]
     vim $selected_dir
+    echo vim $selected_dir
     commandline -f repaint
   end
 end
@@ -55,6 +58,7 @@ function vim_by_peco_on_root_dir
   set selected_dir (fd . '/' -t f -H | peco)
   if [ $selected_dir ]
     vim $selected_dir
+    echo vim $selected_dir
     commandline -f repaint
   end
 end
