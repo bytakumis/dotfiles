@@ -8,8 +8,56 @@ alias ls="exa"
 alias ll="exa --icons -l"
 alias tree="exa --icons -T"
 alias hp=peco_select_history
+alias cdp=cd_by_peco_on_current_diy
+alias cdpr=cd_by_peco_on_root_dir
+alias vimp=vim_by_peco_on_current_dir
+alias vimpr=vim_by_peco_on_root_dir
 
 export ENHANCD_DOT_ARG='...'
+
+# -----------------------------------
+# cd by peco on current directory
+# -----------------------------------
+function cd_by_peco_on_current_dir
+  set selected_dir (fd . -t d -H | peco)
+  if [ $selected_dir ]
+    cd $selected_dir
+    commandline -f repaint
+  end
+end
+
+# -----------------------------------
+# cd by peco on root direcotry
+# -----------------------------------
+function cd_by_peco_on_root_dir
+  set selected_dir (fd . '/' -t d -H | peco)
+  if [ $selected_dir ]
+    cd $selected_dir
+    commandline -f repaint
+  end
+end
+
+# -----------------------------------
+# vim by peco on current directory
+# -----------------------------------
+function vim_by_peco_on_current_dir
+  set selected_dir (fd . -t f -H | peco)
+  if [ $selected_dir ]
+    vim $selected_dir
+    commandline -f repaint
+  end
+end
+
+# -----------------------------------
+# vim by peco on root direcotry
+# -----------------------------------
+function vim_by_peco_on_root_dir
+  set selected_dir (fd . '/' -t f -H | peco)
+  if [ $selected_dir ]
+    vim $selected_dir
+    commandline -f repaint
+  end
+end
 
 # open tmux
 function attach_tmux_session_if_needed
