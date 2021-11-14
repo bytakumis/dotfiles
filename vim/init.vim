@@ -29,14 +29,14 @@ if &compatible
 endif
 
 " Required:
-set runtimepath+=/Users/hjw360/.vim/dein/repos/github.com/Shougo/dein.vim
+set runtimepath+=/Users/ib/.vim/dein/repos/github.com/Shougo/dein.vim
 
 " Required:
-call dein#begin('/Users/hjw360/.vim/dein')
+call dein#begin('/Users/ib/.vim/dein')
 
 " Let dein manage dein
 " Required:
-call dein#add('/Users/hjw360/.vim/dein/repos/github.com/Shougo/dein.vim')
+call dein#add('/Users/ib/.vim/dein/repos/github.com/Shougo/dein.vim')
 call dein#add('Shougo/neocomplete.vim')
 call dein#add('Shougo/denite.nvim')
 call dein#add('lambdalisue/fern.vim')
