@@ -44,9 +44,6 @@ call dein#add('lambdalisue/nerdfont.vim')
 call dein#add('lambdalisue/glyph-palette.vim')
 call dein#add('lambdalisue/fern-renderer-nerdfont.vim')
 call dein#add('dracula/vim')
-call dein#add('sheerun/vim-polyglot')
-call dein#add('preservim/nerdcommenter')
-call dein#add('vim-gitgutter')
 
 " Add or remove your plugins here like this:
 "call dein#add('Shougo/neosnippet.vim')
