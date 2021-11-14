@@ -44,6 +44,7 @@ call dein#add('lambdalisue/nerdfont.vim')
 call dein#add('lambdalisue/glyph-palette.vim')
 call dein#add('lambdalisue/fern-renderer-nerdfont.vim')
 call dein#add('dracula/vim')
+call dein#add('pechorin/any-jump.vim')
 
 " Add or remove your plugins here like this:
 "call dein#add('Shougo/neosnippet.vim')
@@ -71,6 +72,7 @@ nnoremap <silent>sf :Fern .<CR>
 nnoremap <silent>ssg :Denite grep<CR>
 nnoremap <silent>ssf :Denite -start-filter file/rec<CR>
 inoremap <silent><C-j> <ESC>
+nnoremap <silent><C-h> :AnyJump<CR>
 
 
 " -------------
