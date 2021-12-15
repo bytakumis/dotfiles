@@ -1,15 +1,3 @@
-function peco_select_history
-  if test (count $argv) = 0
-    set peco_flags
-  else
-    set peco_flags --query "$argv"
-  end
-
-  history|peco $peco_flags|read foo
-
-  if [ $foo ]
-    commandline $foo
-  else
-    commandline ''
-  end
+function peco_kill
+  ps ax -o pid,time,command | peco --query "$LBUFFER" | awk '{print $1}' | xargs kill
 end

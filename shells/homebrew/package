@@ -1,3 +1,4 @@
+coreutils
 wget
 git
 neovim
@@ -10,3 +11,5 @@ peco
 exa
 bat
 neofetch
+lazygit
+fd

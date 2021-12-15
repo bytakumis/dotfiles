@@ -31,7 +31,8 @@ end
 # cd by peco on root direcotry
 # -----------------------------------
 function cd_by_peco_on_root_dir
-  set selected_dir (fd . '/' -t d -H | peco)
+  set home_dir (realpath ~)
+  set selected_dir (fd . $home_dir -t d -H | peco)
   if [ $selected_dir ]
     cd $selected_dir
     echo cd $selected_dir
@@ -55,7 +56,8 @@ end
 # vim by peco on root direcotry
 # -----------------------------------
 function vim_by_peco_on_root_dir
-  set selected_dir (fd . '/' -t f -H | peco)
+  set home_dir (realpath ~)
+  set selected_dir (fd . $home_dir -t f -H | peco)
   if [ $selected_dir ]
     vim $selected_dir
     echo vim $selected_dir
