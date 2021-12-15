@@ -1,5 +1,10 @@
 # dotfiles
 
+# TODO
+- [ ] vimのsetup不具合を修正する
+- [ ] iterm2のcolorschemeの設定を自動化する
+- [ ] alfredの設定を自動化する
+
 ## Alfred
   - https://github.com/AlexanderWillner/deepl-alfred-workflow2/releases
 
