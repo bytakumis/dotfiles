@@ -16,8 +16,8 @@ echo '##################################################'
 echo '# Setup fish shell ...'
 echo '##################################################'
 # Setup default shell
-sudo echo `(which fish)` > /etc/shells
-sudo chsh -s `(which fish)`
+sudo sh -c "echo $(which fish) >> /etc/shells"
+chsh -s $(which fish)
 # Setup fisher
 fish ./shells/fish/fisher/install.sh
 # Setup config
