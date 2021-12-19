@@ -5,6 +5,13 @@
 - [ ] iterm2のcolorschemeの設定を自動化する
 - [ ] alfredの設定を自動化する
 
+## 手動で設定する必要があるもの
+- iTerm2の設定
+  - /shells/iterm2の設定ファイルをインポートする
+  - Draculaのテーマをインストールして設定する
+- Alfredの設定
+  - アクティベーションコードを入力する
+
 ## Alfred
   - https://github.com/AlexanderWillner/deepl-alfred-workflow2/releases
 
