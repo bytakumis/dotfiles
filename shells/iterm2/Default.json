@@ -61,6 +61,7 @@
     "Red Component" : 0.94509803921568625,
     "Blue Component" : 0.5490196078431373
   },
+  "Icon" : 0,
   "Use Non-ASCII Font" : false,
   "Link Color" : {
     "Red Component" : 0,
@@ -318,7 +319,7 @@
     "Blue Component" : 0
   },
   "Blur" : true,
-  "Normal Font" : "Monaco 12",
+  "Normal Font" : "HackNerdFontComplete-Regular 12",
   "Application Keypad Allowed" : false,
   "Vertical Spacing" : 1,
   "Ansi 7 Color" : {
