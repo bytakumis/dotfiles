@@ -1,5 +1,6 @@
 # Path: homebrew
 set PATH /opt/homebrew/bin $PATH
+set PATH $HOME/Library/Python/3.8/bin $PATH
 
 if status is-interactive
     # Commands to run in interactive sessions can go here

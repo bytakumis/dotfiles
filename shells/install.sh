@@ -34,3 +34,12 @@ echo '##################################################'
 mkdir -p $pecoConfigPath
 cp ./shells/peco/config.json $pecoConfigPath
 
+echo '##################################################'
+echo '# Setup tmux ...'
+echo '##################################################'
+# Setup powerline
+pip3 install powerline-status
+
+# Setup config
+cp ./shells/tmux/tmux.conf ~/.tmux.conf
+tmux source-file ~/.tmux.conf
