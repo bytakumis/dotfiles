@@ -15,8 +15,8 @@
     (https://iterm2.com/)
   - alfred
     (https://www.alfredapp.com/)
-  - Visual Studio Code
-    (https://azure.microsoft.com/ja-jp/products/visual-studio-code/)
+  - IntelliJ IDEA
+    (https://www.jetbrains.com/ja-jp/idea/download/#section=mac)
   - Docker for Mac
     (https://docs.docker.jp/docker-for-mac/install.html)
   - Gyazo
