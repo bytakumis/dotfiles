@@ -9,7 +9,7 @@ brew update
 echo '##################################################'
 echo '# Install tools ...'
 echo '##################################################'
-brew install $(cat ./shells/homebrew/package)
+brew install $(cat ./shells/homebrew/formulae)
 brew install --cask $(cat ./shells/homebrew/casks)
 pip3 install -U neovim
 
