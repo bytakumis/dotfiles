@@ -1,6 +1,11 @@
 # Path: homebrew
 set PATH /opt/homebrew/bin $PATH
 set PATH $HOME/Library/Python/3.8/bin $PATH
+set -x GOPATH $HOME/go
+set -x GOROOT /opt/homebrew/Cellar/go@1.16/1.16.15/libexec
+set -x GOTOOLDIR /opt/homebrew/Cellar/go@1.16/1.16.15/libexec/pkg/tool/darwin_arm64
+set -x PATH $GOPATH/bin $PATH
+
 
 if status is-interactive
     # Commands to run in interactive sessions can go here
