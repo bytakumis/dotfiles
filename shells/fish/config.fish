@@ -74,6 +74,18 @@ function vim_by_peco_on_root_dir
   end
 end
 
+# tmux popup
+function tmuxpopup -d "toggle tmux popup window"
+  set width '90%'
+  set height '90%'
+  set session (tmux display-message -p -F "#{session_name}")
+  if contains "popup" $session
+    tmux detach-client
+  else
+    tmux popup -d '#{pane_current_path}' -xC -yC -w$width -h$height -E "tmux attach -t popup || tmux new -s popup"
+  end
+end
+
 # open tmux
 function attach_tmux_session_if_needed
     set ID (tmux list-sessions)
