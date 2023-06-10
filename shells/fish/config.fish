@@ -5,6 +5,8 @@ set -x GOPATH $HOME/go
 set -x GOROOT /opt/homebrew/Cellar/go@1.16/1.16.15/libexec
 set -x GOTOOLDIR /opt/homebrew/Cellar/go@1.16/1.16.15/libexec/pkg/tool/darwin_arm64
 set -x PATH $GOPATH/bin $PATH
+set -x PATH /opt/homebrew/var/nodebrew/current/bin $PATH
+set -x NODEBREW_ROOT /opt/homebrew/var/nodebrew
 
 
 if status is-interactive
