@@ -4,7 +4,7 @@
   - [Brave](https://brave.com/)
   - [Warp](https://www.warp.dev/)
   - [RayCast](https://www.raycast.com/)
-  - [VSCode](https://code.visualstudio.com/)
+  - Cursor
   - [Docker](https://docs.docker.jp/docker-for-mac/install.html)
   - CloudApp
   - EdrawMind
