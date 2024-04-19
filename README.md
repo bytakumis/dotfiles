@@ -9,7 +9,9 @@
   - CloudApp
   - EdrawMind
   - Ractangle Pro
-  - HyperSwitch
+  - AltTab
+  - Postman
+  - TablePlus
 
 ## Terminal Tools
   - awscli
@@ -24,6 +26,7 @@
   - nmap
   - peco
   - ripgrep
-  - serverlessframework
+  - serverless
   - supabase
   - spacebar
+  - httpie
