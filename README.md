@@ -6,9 +6,8 @@
   - [RayCast](https://www.raycast.com/)
   - Cursor
   - [Docker](https://docs.docker.jp/docker-for-mac/install.html)
-  - CloudApp
+  - CleanShotX
   - EdrawMind
-  - Ractangle Pro
   - AltTab
   - Postman
   - TablePlus
@@ -16,7 +15,7 @@
 ## Terminal Tools
   - awscli
   - bat
-  - exa
+  - eza (exaからフォークされたメンテナンスされているコマンド)
   - fd
   - fish
   - httpie
