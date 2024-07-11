@@ -28,4 +28,3 @@
   - serverless
   - supabase
   - spacebar
-  - httpie
