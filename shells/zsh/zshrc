@@ -1,0 +1,70 @@
+# Path: homebrew
+export PATH="/opt/homebrew/bin:$PATH"
+export PATH="$HOME/Library/Python/3.8/bin:$PATH"
+export GOPATH="$HOME/go"
+export GOROOT="/opt/homebrew/Cellar/go@1.16/1.16.15/libexec"
+export GOTOOLDIR="/opt/homebrew/Cellar/go@1.16/1.16.15/libexec/pkg/tool/darwin_arm64"
+export PATH="$GOPATH/bin:$PATH"
+export PATH="/opt/homebrew/var/nodebrew/current/bin:$PATH"
+export NODEBREW_ROOT="/opt/homebrew/var/nodebrew"
+
+# エイリアス
+alias vim="nvim"
+alias ls="eza"
+alias ll="eza --icons -l"
+alias tree="eza --icons -T"
+alias hp="peco_select_history"
+alias cdp="cd_by_peco_on_current_dir"
+alias cdpr="cd_by_peco_on_root_dir"
+alias vimp="vim_by_peco_on_current_dir"
+alias vimpr="vim_by_peco_on_root_dir"
+# alias lg="lazygit"
+
+export ENHANCD_DOT_ARG='...'
+
+# 現在のディレクトリでpecoを使用してcdする
+cd_by_peco_on_current_dir() {
+  local selected_dir=$(fd . -t d -H | peco)
+  if [ -n "$selected_dir" ]; then
+    cd "$selected_dir"
+    echo "cd $selected_dir"
+    zle reset-prompt
+  fi
+}
+zle -N cd_by_peco_on_current_dir
+
+# ルートディレクトリからpecoを使用してcdする
+cd_by_peco_on_root_dir() {
+  local home_dir=$(realpath ~)
+  local selected_dir=$(fd . "$home_dir" -t d -H | peco)
+  if [ -n "$selected_dir" ]; then
+    BUFFER="cd $selected_dir"
+    zle accept-line
+  fi
+}
+zle -N cd_by_peco_on_root_dir
+bindkey '^P' cd_by_peco_on_root_dir
+
+# 現在のディレクトリでpecoを使用してvimを開く
+vim_by_peco_on_current_dir() {
+  local selected_file=$(fd . -t f -H | peco)
+  if [ -n "$selected_file" ]; then
+    vim "$selected_file"
+    echo "vim $selected_file"
+    zle reset-prompt
+  fi
+}
+zle -N vim_by_peco_on_current_dir
+
+# ルートディレクトリからpecoを使用してvimを開く
+vim_by_peco_on_root_dir() {
+  local home_dir=$(realpath ~)
+  local selected_file=$(fd . "$home_dir" -t f -H | peco)
+  if [ -n "$selected_file" ]; then
+    vim "$selected_file"
+    echo "vim $selected_file"
+    zle reset-prompt
+  fi
+}
+zle -N vim_by_peco_on_root_dir
+
