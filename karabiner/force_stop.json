@@ -1,0 +1,18 @@
+{
+    "description": "Force Stop",
+    "manipulators": [
+        {
+            "from": {
+                "key_code": "c",
+                "modifiers": { "mandatory": ["left_shift", "left_control"] }
+            },
+            "to": [
+                {
+                    "key_code": "c",
+                    "modifiers": ["left_control", "fn"]
+                }
+            ],
+            "type": "basic"
+        }
+    ]
+}
