@@ -1,14 +1,21 @@
 # dotfiles
 
+```
+$ make setup
+```
+
 ## Tools
-  - Brave
+  - Arc
   - Warp
   - RayCast
   - Cursor
   - Docker
   - CleanShotX
-  - EdrawMind
   - AltTab
   - Postman
   - TablePlus
+  - WireShark
+  - DevUtils
+  - Todoist
+  - Craft
 
