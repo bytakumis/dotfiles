@@ -17,4 +17,11 @@ nmap
 termshark
 awscli
 glances
+gh
+go
+pipx
+pre-commit
+serverless
+terraform
+
 
