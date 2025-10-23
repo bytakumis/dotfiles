@@ -23,8 +23,8 @@ alias cdpr="cd_by_peco_on_root_dir"
 alias vimp="vim_by_peco_on_current_dir"
 alias vimpr="vim_by_peco_on_root_dir"
 alias cdr='cd $(git rev-parse --show-toplevel)'
-alias gsm='git switch main'
-alias gss='git switch stg'
+alias gm='git switch main'
+alias gs='git switch stg'
 alias gp='git pull'
 # alias lg="lazygit"
 
