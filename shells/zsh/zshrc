@@ -26,6 +26,9 @@ alias cdr='cd $(git rev-parse --show-toplevel)'
 alias gm='git switch main'
 alias gs='git switch stg'
 alias gp='git pull'
+alias gmp='gm && gp'
+alias gsp='gs && gp'
+alias gc='git switch -c'
 # alias lg="lazygit"
 
 export ENHANCD_DOT_ARG='...'
