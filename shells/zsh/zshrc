@@ -29,6 +29,7 @@ alias gp='git pull'
 alias gmp='gm && gp'
 alias gsp='gs && gp'
 alias gc='git switch -c'
+alias gs='git switch'
 # alias lg="lazygit"
 
 export ENHANCD_DOT_ARG='...'
