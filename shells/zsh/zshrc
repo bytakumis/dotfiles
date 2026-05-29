@@ -24,11 +24,17 @@ alias vimp="vim_by_peco_on_current_dir"
 alias vimpr="vim_by_peco_on_root_dir"
 alias cdr='cd $(git rev-parse --show-toplevel)'
 alias gp='git pull'
-alias gmp='gm && gp'
-alias gsp='gs && gp'
+alias gmp='git switch main && gp'
+alias gsp='git switch stg && gp'
 alias gc='git switch -c'
 alias gs='git switch'
 # alias lg="lazygit"
+
+gwc() {
+  local dir
+  dir=$(git worktree list | fzf | awk '{print $1}')
+  [[ -n "$dir" ]] && cd "$dir"
+}
 
 export ENHANCD_DOT_ARG='...'
 
