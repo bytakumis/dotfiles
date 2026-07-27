@@ -83,3 +83,5 @@ vim_by_peco_on_root_dir() {
   fi
 }
 zle -N vim_by_peco_on_root_dir
+
+cd ~/Repos
