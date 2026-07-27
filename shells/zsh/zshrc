@@ -22,7 +22,7 @@ alias cdp="cd_by_peco_on_current_dir"
 alias cdpr="cd_by_peco_on_root_dir"
 alias vimp="vim_by_peco_on_current_dir"
 alias vimpr="vim_by_peco_on_root_dir"
-alias cdr='cd $(git rev-parse --show-toplevel)'
+alias cdr='cd ~/Repos'
 alias gp='git pull'
 alias gmp='git switch main && gp'
 alias gsp='git switch stg && gp'
@@ -83,5 +83,3 @@ vim_by_peco_on_root_dir() {
   fi
 }
 zle -N vim_by_peco_on_root_dir
-
-cd ~/Repos
