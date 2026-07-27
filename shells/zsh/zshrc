@@ -28,6 +28,8 @@ alias gmp='git switch main && gp'
 alias gsp='git switch stg && gp'
 alias gc='git switch -c'
 alias gs='git switch'
+alias shell='open -a Ghostty .'
+alias codex='open -a Codex .'
 # alias lg="lazygit"
 
 gwc() {
