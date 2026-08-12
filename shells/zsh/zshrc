@@ -32,6 +32,56 @@ alias shell='open -a Ghostty .'
 alias codex='open -a Codex .'
 # alias lg="lazygit"
 
+
+# ============
+# ~/Repos/ 配下のリポジトリをfzfで検索して移動する
+# ------------
+function cdr() {
+  local repo
+  repo=$(
+    fd -H -t d '^\.git$' ~/Repos --max-depth 3 |
+      sed -e 's#/.git/$##' -e "s#^$HOME/Repos/##" |
+      fzf --height=40% --reverse
+  )
+  [[ -n "$repo" ]] && cd "$HOME/Repos/$repo"
+}
+
+# ============
+# __ ファイル検索用
+# ------------
+function _fsearch() {
+  rg --line-number --no-heading --color=always "$1" . \
+    | fzf --ansi \
+          --delimiter=: \
+          --preview 'bat --color=always --highlight-line {2} {1}'
+}
+
+# ============
+# 現在のdir配下からfzfでファイルの中身を検索し、対象をvimで開く
+# ------------
+function vimr() {
+  local selected=$(_fsearch "$1") || return
+
+  local file="${selected%%:*}"
+  local rest="${selected#*:}"
+  local line="${rest%%:*}"
+
+  vim "+${line}" "$file"
+}
+
+# ============
+# 現在のdir配下からfzfでファイルの中身を検索し、対象をエディターで開く
+# ------------
+function coder() {
+  local selected=$(_fsearch "$1") || return
+
+  local file="${selected%%:*}"
+  local rest="${selected#*:}"
+  local line="${rest%%:*}"
+
+  code --goto "${file}:${line}"
+}
+
 gwc() {
   local dir
   dir=$(git worktree list | fzf | awk '{print $1}')
