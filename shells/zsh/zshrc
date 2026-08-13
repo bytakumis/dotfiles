@@ -30,7 +30,31 @@ alias gc='git switch -c'
 alias gs='git switch'
 alias shell='open -a Ghostty .'
 alias codex='open -a Codex .'
-# alias lg="lazygit"
+
+
+# ============
+# __ ファイルの検索
+# ------------
+function _ffile() {
+  fd --type f "$1" . \
+    | fzf --preview 'bat --color=always {} 2>/dev/null || sed -n "1,200p" {}'
+}
+
+# ============
+# 現在のdir配下からfzfでファイル名を検索し、対象をvimで開く
+# ------------
+function vimf() {
+  local file=$(_ffile "$1") || return
+  vim "$file"
+}
+
+# ============
+# 現在のdir配下からfzfでファイル名を検索し、対象をvimで開く
+# ------------
+function codef() {
+  local file=$(_ffile "$1") || return
+  code "$file"
+}
 
 
 # ============
@@ -59,7 +83,7 @@ function _fsearch() {
 # ============
 # 現在のdir配下からfzfでファイルの中身を検索し、対象をvimで開く
 # ------------
-function vimr() {
+function vims() {
   local selected=$(_fsearch "$1") || return
 
   local file="${selected%%:*}"
@@ -72,7 +96,7 @@ function vimr() {
 # ============
 # 現在のdir配下からfzfでファイルの中身を検索し、対象をエディターで開く
 # ------------
-function coder() {
+function codes() {
   local selected=$(_fsearch "$1") || return
 
   local file="${selected%%:*}"
