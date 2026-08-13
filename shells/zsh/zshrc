@@ -31,6 +31,7 @@ alias gs='git switch'
 alias shell='open -a Ghostty .'
 alias codex='open -a Codex .'
 alias showpr='gh pr view --web'
+alias writer='open -a Writer'
 
 
 # ============
