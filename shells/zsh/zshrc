@@ -25,7 +25,6 @@ alias cdp="cd_by_peco_on_current_dir"
 alias cdpr="cd_by_peco_on_root_dir"
 alias vimp="vim_by_peco_on_current_dir"
 alias vimpr="vim_by_peco_on_root_dir"
-alias cdr='cd ~/Repos'
 alias gp='git pull'
 alias gmp='git switch main && gp'
 alias gsp='git switch stg && gp'
@@ -36,6 +35,85 @@ alias codex='open -a Codex .'
 alias showpr='gh pr view --web'
 alias writer='open -a Writer'
 
+# ============
+# __ worktreeの検索
+# ------------
+function _fworktree() {
+  git worktree list --porcelain \
+    | awk '
+        function add() {
+          if (path != "") {
+            paths[++n] = path
+            branches[n] = branch
+
+            if (length(branch) > max_width) {
+              max_width = length(branch)
+            }
+          }
+        }
+
+        /^worktree / {
+          add()
+
+          path = substr($0, 10)
+          branch = "(detached)"
+        }
+
+        /^branch / {
+          branch = $0
+          sub(/^branch refs\/heads\//, "", branch)
+        }
+
+        END {
+          add()
+
+          for (i = 1; i <= n; i++) {
+            # 1列目: cd用の実パス
+            # 2列目: fzfで表示する整形済み文字列
+            printf "%s\t%-*s  %s\n",
+              paths[i],
+              max_width,
+              branches[i],
+              paths[i]
+          }
+        }
+      ' \
+    | fzf \
+        --delimiter=$'\t' \
+        --with-nth=2 \
+        --prompt='worktree> ' \
+        --preview 'git -C {1} status --short --branch'
+}
+
+# ============
+# worktreeを一覧化して、fzfで選択したworktreeに移動する
+# ------------
+function gw() {
+  local selected=$(_fworktree) || return
+  local dir="${selected%%$'\t'*}"
+  cd "$dir"
+}
+
+# ============
+# __ branchの検索
+# ------------
+function _fbranch() {
+  git branch \
+    --format='%(refname:short)' \
+    --sort=-committerdate \
+    | fzf \
+        --prompt='branch> ' \
+        --preview 'git log --color=always --oneline --decorate -20 {}'
+}
+
+# ============
+# fzfでbranchを選択し、そのbranchに移動する
+# ------------
+unalias gb 2>/dev/null
+function gb() {
+  local branch=$(_fbranch) || return
+  git switch "$branch"
+}
 
 # ============
 # __ ファイルの検索
