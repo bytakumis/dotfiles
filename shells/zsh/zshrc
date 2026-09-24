@@ -178,6 +178,22 @@ function vims() {
 }
 
 # ============
+# 現在のdir配下からfzfでdirを検索して移動する
+# ------------
+function cds() {
+  local dir
+  dir=$(
+    fd --type d . . \
+      | fzf \
+          --height=40% \
+          --reverse \
+          --prompt='dir> '
+  ) || return
+
+  [[ -n "$dir" ]] && cd "$dir"
+}
+
+# ============
 # 現在のdir配下からfzfでファイルの中身を検索し、対象をエディターで開く
 # ------------
 function codes() {
