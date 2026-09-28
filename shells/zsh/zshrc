@@ -180,7 +180,7 @@ function vims() {
 # ============
 # 現在のdir配下からfzfでdirを検索して移動する
 # ------------
-function cds() {
+function cdd() {
   local dir
   dir=$(
     fd --type d . . \
